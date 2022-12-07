@@ -1,9 +1,2 @@
 #!/bin/bash
 printf %0.2f'\n' $NUM
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
