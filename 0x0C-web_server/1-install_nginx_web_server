@@ -5,9 +5,14 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 
-echo 'Hello World!' > /var/www/html/index.html
+echo 'Hello World!' | sudo tee /var/www/html/index.html
+
+# Ensure Nginx is listening on port 80
+sudo sed -i 's/80 default_server/80/' /etc/nginx/sites-available/default
 
 # testing nginx configuration
 sudo nginx -t
 
 sudo service nginx reload
+
+chmod +x 1-install_nginx_web_server
