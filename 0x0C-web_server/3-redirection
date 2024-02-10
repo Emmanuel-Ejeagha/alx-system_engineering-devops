@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
 # Configures a new ubuntu machine by installing
-# Nginx where it should be listening to port 80
-# Serve a page tht would return a Hello World String
+# Nginx where it should be listening on port 80
+# Serve a page that would return a Hello World string
+#
 
 
 echo -e "Updating and installing Nginx.\n"
-sudo apt-get update -y -qq \ 
-	sudo apt-get install nginx -y
+sudo apt-get update -y -qq && \
+         sudo apt-get install nginx -y
 
 echo -e "\nSetting up some minor stuff.\n"
 
-# starting nginx services
+# starting nginx service
 sudo service nginx start
 
 # allowing nginx on firewall
@@ -21,15 +22,15 @@ sudo chown -R "$USER":"$USER" /var/www/html
 sudo chmod -R 755 /var/www
 
 # Backup default index
-cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx.html.bckp
+cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.bckp
 
 # Creating new index
-echo -e "Hello World!" > /var/www/html/index.nginx.html
+echo -e "Hello World!" > /var/www/html/index.nginx-debian.html
 
-# setting up /redirect_me to a youtube video
-sudo sed -i '24i\     rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+# Setting up /redirect_me to a youtube video
+sudo sed -i '24i\       rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
 
-# Restarting nginx 
+# Restarting nginx
 sudo service nginx restart
 
 echo -e "\nCompleted.\n"
