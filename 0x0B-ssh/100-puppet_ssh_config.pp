@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Client configuration file (w/ Puppet)
 file_line { 'Identity file':
   ensure => 'present',
