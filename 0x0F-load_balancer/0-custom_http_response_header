@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Configures a new Ubuntu server with a custom HTTP header response
-apt-get update
-apt-get install -y nginx
+sudo apt-get update
+sudo apt-get install -y nginx
 
 mkdir -p /var/www/html
 touch /var/www/html/index.html
@@ -25,4 +25,4 @@ printf %s "server {
     }
 }" > /etc/nginx/sites-available/default
 
-service nginx restart
+sudo service nginx restart
