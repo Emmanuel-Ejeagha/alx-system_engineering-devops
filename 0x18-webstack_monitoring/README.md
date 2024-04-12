@@ -4,7 +4,8 @@ This project invovled setting up Sumo Logic accounts to monitor server traffic u
 
 
 ## Tasks :page_with_curl:
-[Datadog](https://www.datadoghq.com/)
+
+[Datadog](https://www.datadoghq.com/){:target="_blank"}
 * **0. Sign up for Datadog and install datadog-agent**
 -  my Sumo Logic access key.
     * First line: `Access ID`
